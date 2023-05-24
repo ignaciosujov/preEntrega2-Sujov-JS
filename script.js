@@ -139,4 +139,13 @@ function validarMeses(){
 }
 
 validarMeses()
-alert(`Muy bien, entonces cotizaremos $${opcionElegidaMonto.monto} a ${opcionElegidaMeses.cantMeses} dias.`)
+alert(`Muy bien, entonces cotizaremos $${opcionElegidaMonto.monto} a ${opcionElegidaMeses.cantMeses} dias.`);
+
+function cotizarPlazoFijo(){
+    let montoPorMes = opcionElegidaMonto.monto * tnaHoy.tasa / 100 / 12;
+    let montoTotal = montoPorMes * opcionElegidaMeses.cantMeses / 30;
+
+    alert(`El interes mensual a recibir sera de ${montoPorMes.toFixed(2)} \n Usted recibira un total de ${montoTotal.toFixed(2)} pesos al terminar el plazo fijo`)
+}
+
+cotizarPlazoFijo()
