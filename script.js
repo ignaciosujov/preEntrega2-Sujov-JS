@@ -97,7 +97,9 @@ function validarMonto(){
     if (opcionElegidaMonto.id <= 5){
         return opcionElegidaMonto.monto
     }else if (opcionElegidaMonto.id == 6){
-        const monto6 = new MontosPlazoFijo(6, parseInt(prompt("¿Que monto desea cotizar?")))
+        let nuevoMontoMensaje = "¿Que monto desea cotizar?"
+        const monto6 = new MontosPlazoFijo(6, parseInt(prompt(nuevoMontoMensaje)))
+        monto6.monto = validarNumero(monto6.monto, nuevoMontoMensaje)
         return opcionElegidaMonto = monto6
     }else{
         alert("elegi un numero valido")
@@ -126,7 +128,9 @@ function validarMeses(){
     if (opcionElegidaMeses.id <= 4){
         return opcionElegidaMeses.cantMeses
     }else if (opcionElegidaMeses.id == 5){
-        const cantMes5 = new MesesPlazoFijo(5, parseInt(prompt("¿A cuantos dias quiere hacer el plazo fijo?")))
+        let nuevoMesesMensaje = "¿A cuantos dias quiere hacer el plazo fijo?"
+        const cantMes5 = new MesesPlazoFijo(5, parseInt(prompt(nuevoMesesMensaje)))
+        cantMes5.cantMeses = validarNumero(cantMes5.cantMeses, nuevoMesesMensaje)
         return opcionElegidaMeses = cantMes5
     }else{
         alert("elegi un numero valido")
